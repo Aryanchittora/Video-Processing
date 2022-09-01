@@ -1,0 +1,51 @@
+<html>
+<head>
+<title>Video Processing</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css')}}">
+
+</head>
+<body>
+
+<center>
+<!-- start writing below -->
+
+<h1>Video Processing</h1><hr>
+<h2>Select a video file to upload and Convert it into Black & White Video</h2><br>
+
+<form action="/" method="post" enctype="multipart/form-data">
+    <input type="file" name="file" class="btn btn-primary">
+    <br>
+    <input type="submit" class="btn btn-success">
+    <br>
+</form>
+
+<br>
+
+<video autoplay="autoplay" controls="controls">
+    <source src="{{ url_for('display_video', filename=filename) }}" type="video/mp4"></source>
+</video>
+
+<br>
+
+<a href="{{ url_for('.download_file') }}" class="btn btn-danger btn-lg">Download Video</a>
+
+
+
+
+
+
+
+
+
+<!-- end -->
+</center>
+
+</body>
+</html>
+
+
+
+
